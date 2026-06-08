@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puyuan Textile | Premium Home Fabric Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --warm-white: #FAF8F4;
+  --ink: #1C1814;
+  --ink-soft: #3A342C;
+  --gold: #B8923A;
+  --gold-light: #D4AC5A;
+  --gold-pale: #EDD98A22;
+  --sand: #C9B99A;
+  --sand-light: #E8DECC;
+  --border: #D6C9B044;
+  --border-strong: #C9B99A88;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  height: 72px;
+  background: var(--cream);
+  border-bottom: 0.5px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  display: flex; align-items: baseline; gap: 10px;
+}
+.nav-logo-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px; font-weight: 300;
+  color: var(--ink); letter-spacing: 4px;
+}
+.nav-logo-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; font-weight: 400;
+  color: var(--gold); letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex; gap: 40px; list-style: none;
+}
+.nav-links a {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  transition: color .3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); border: 0.5px solid var(--gold);
+  padding: 8px 22px; text-decoration: none;
+  transition: background .3s, color .3s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--cream); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  padding: 72px 5vw 0;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute; right: -2vw; top: 50%; transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 300; color: transparent;
+  -webkit-text-stroke: 0.5px var(--sand-light);
+  letter-spacing: -4px; line-height: 1;
+  pointer-events: none; user-select: none;
+}
+
+.hero-content { padding-right: 6vw; animation: fadeUp .9s ease both; }
+
+.eyebrow {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.eyebrow::before {
+  content: ''; display: block;
+  width: 40px; height: 0.5px; background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5.5vw, 80px);
+  font-weight: 300; line-height: 1.1;
+  color: var(--ink); margin-bottom: 12px;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+
+.hero-title-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 300; color: var(--sand);
+  letter-spacing: 6px; margin-bottom: 36px;
+}
+
+.hero-desc {
+  font-size: 15px; color: var(--ink-soft);
+  max-width: 420px; margin-bottom: 48px; line-height: 1.8;
+}
+
+.hero-actions { display: flex; align-items: center; gap: 32px; }
+
+.btn-primary {
+  background: var(--gold); color: var(--cream);
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 36px; text-decoration: none;
+  transition: background .3s, transform .2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+
+.btn-ghost {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+  transition: color .3s;
+}
+.btn-ghost::after {
+  content: '→'; transition: transform .3s;
+}
+.btn-ghost:hover { color: var(--gold); }
+.btn-ghost:hover::after { transform: translateX(4px); }
+
+.hero-visual {
+  position: relative; height: 70vh; min-height: 500px;
+  animation: fadeIn 1.2s ease both .3s;
+}
+
+.hero-fabric {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #C9B99A22 0%, #B8923A18 50%, #D6C9B033 100%);
+  position: relative; overflow: hidden;
+}
+
+/* Fabric weave SVG pattern */
+.hero-fabric::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 19px, var(--border-strong) 19px, var(--border-strong) 20px),
+    repeating-linear-gradient(90deg, transparent, transparent 19px, var(--border-strong) 19px, var(--border-strong) 20px);
+  opacity: 0.4;
+}
+
+.hero-fabric-inner {
+  position: absolute; inset: 40px;
+  border: 0.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.fabric-symbol {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 120px; font-weight: 300;
+  color: transparent; -webkit-text-stroke: 0.5px var(--gold);
+  opacity: 0.3;
+}
+
+.hero-stat-strip {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 20px;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--gold-light);
+  display: block;
+}
+.stat-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sand); display: block; margin-top: 2px;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  overflow: hidden; border-top: 0.5px solid var(--border-strong);
+  border-bottom: 0.5px solid var(--border-strong);
+  background: var(--warm-white); padding: 14px 0;
+}
+.marquee-track {
+  display: flex; gap: 0; width: max-content;
+  animation: scroll 28s linear infinite;
+}
+.marquee-item {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--sand); white-space: nowrap;
+  padding: 0 40px;
+  display: flex; align-items: center; gap: 40px;
+}
+.marquee-item::after {
+  content: '◆'; font-size: 8px; color: var(--gold);
+}
+
+/* ── PRODUCTS ── */
+.products {
+  padding: 120px 5vw;
+}
+
+.section-header {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: end; margin-bottom: 72px;
+}
+
+.section-label {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 16px;
+}
+.section-label::before {
+  content: ''; display: block;
+  width: 32px; height: 0.5px; background: var(--gold);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 56px); font-weight: 300;
+  line-height: 1.15;
+}
+
+.section-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; font-weight: 300; color: var(--sand-light);
+  line-height: 1;
+}
+
+.product-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+}
+
+.product-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: var(--warm-white);
+  aspect-ratio: 3/4;
+}
+
+.product-card:first-child {
+  grid-column: 1 / 2; grid-row: 1 / 3;
+  aspect-ratio: unset;
+}
+
+.product-bg {
+  position: absolute; inset: 0;
+  transition: transform .6s ease;
+}
+
+.product-card:hover .product-bg { transform: scale(1.04); }
+
+.product-bg-1 {
+  background: linear-gradient(160deg, #C9B99A 0%, #8B7355 100%);
+}
+.product-bg-2 {
+  background: linear-gradient(160deg, #D6C9B0 0%, #A8956F 100%);
+}
+.product-bg-3 {
+  background: linear-gradient(160deg, #B8A882 0%, #7A6545 100%);
+}
+.product-bg-4 {
+  background: linear-gradient(160deg, #E0D4C0 0%, #C4A875 100%);
+}
+.product-bg-5 {
+  background: linear-gradient(160deg, #8B7355 0%, #5C4A2C 100%);
+}
+
+/* Fabric texture overlay per card */
+.product-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 9px),
+    repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(0,0,0,0.03) 8px, rgba(0,0,0,0.03) 9px);
+}
+
+.product-info {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px 24px;
+  background: linear-gradient(to top, rgba(28,24,20,0.85) 0%, transparent 55%);
+  opacity: 1; transition: opacity .4s;
+}
+
+.product-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 11px; letter-spacing: 4px; color: var(--gold-light);
+  margin-bottom: 6px;
+}
+.product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: #FAF8F4;
+  margin-bottom: 4px;
+}
+.product-tier {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sand);
+}
+.product-tag {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--gold); color: var(--cream);
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 120px 5vw;
+  background: var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8vw;
+  align-items: center;
+}
+
+.about-text .section-label { color: var(--gold); }
+.about-text .section-title { color: var(--warm-white); }
+
+.about-body {
+  color: var(--sand); font-size: 15px; margin-top: 28px; line-height: 1.9;
+}
+
+.about-quote {
+  margin-top: 40px; padding-left: 24px;
+  border-left: 2px solid var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-style: italic;
+  color: var(--gold-light); line-height: 1.5;
+}
+
+.about-visual {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+
+.about-stat-box {
+  padding: 32px 24px;
+  border: 0.5px solid var(--border-strong);
+}
+.about-stat-box:nth-child(2) { margin-top: 32px; background: var(--gold); }
+.about-stat-box:nth-child(2) .stat-num { color: var(--ink); }
+.about-stat-box:nth-child(2) .stat-label { color: var(--ink-soft); }
+.about-stat-box:nth-child(4) { background: rgba(184,146,58,0.1); }
+
+.about-stat-box .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 300; color: var(--gold-light);
+  display: block; line-height: 1;
+}
+.about-stat-box .stat-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sand); display: block; margin-top: 12px;
+}
+
+/* ── CATEGORIES ── */
+.categories { padding: 120px 5vw; }
+
+.cat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  margin-top: 72px;
+}
+
+.cat-item {
+  padding: 40px 28px;
+  background: var(--warm-white);
+  border-bottom: 2px solid transparent;
+  transition: border-color .3s, background .3s;
+  cursor: pointer;
+}
+.cat-item:hover {
+  border-bottom-color: var(--gold);
+  background: #FAF8F4;
+}
+
+.cat-icon {
+  width: 48px; height: 48px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-icon svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; stroke-width: 1; }
+
+.cat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; color: var(--sand);
+  letter-spacing: 2px; margin-bottom: 12px;
+}
+.cat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--ink);
+  margin-bottom: 8px;
+}
+.cat-name-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 12px; letter-spacing: 3px; color: var(--sand);
+  margin-bottom: 16px;
+}
+.cat-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.7; }
+
+.cat-arrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-top: 24px;
+  transition: gap .3s;
+}
+.cat-item:hover .cat-arrow { gap: 14px; }
+
+/* ── MARKETS ── */
+.markets {
+  padding: 120px 5vw;
+  background: var(--warm-white);
+}
+
+.market-layout {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 8vw;
+  align-items: start; margin-top: 72px;
+}
+
+.market-intro {
+  font-size: 15px; color: var(--ink-soft); line-height: 1.9;
+}
+
+.market-list {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+
+.market-item {
+  padding: 28px 24px;
+  background: var(--cream);
+  display: flex; align-items: center; gap: 16px;
+  transition: background .3s;
+}
+.market-item:hover { background: var(--sand-light); }
+
+.market-flag {
+  font-size: 28px; line-height: 1;
+}
+.market-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+}
+.market-sub {
+  font-size: 11px; color: var(--sand); letter-spacing: 1px;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 120px 5vw;
+  background: var(--ink);
+  text-align: center;
+}
+
+.contact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 72px); font-weight: 300;
+  color: var(--warm-white); line-height: 1.15; margin-bottom: 20px;
+}
+.contact-title em { font-style: italic; color: var(--gold); }
+
+.contact-sub {
+  font-size: 14px; color: var(--sand);
+  max-width: 480px; margin: 0 auto 56px;
+}
+
+.contact-cards {
+  display: flex; justify-content: center; gap: 2px;
+  margin-bottom: 56px; flex-wrap: wrap;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.04);
+  border: 0.5px solid var(--border-strong);
+  padding: 36px 48px; min-width: 200px;
+}
+.contact-card-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--sand); margin-bottom: 10px;
+}
+.contact-card-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: var(--gold-light);
+}
+
+.btn-contact {
+  display: inline-block;
+  background: var(--gold); color: var(--ink);
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  padding: 16px 56px; text-decoration: none;
+  font-weight: 500;
+  transition: background .3s, letter-spacing .3s;
+}
+.btn-contact:hover { background: var(--gold-light); letter-spacing: 4px; }
+
+/* ── FOOTER ── */
+footer {
+  background: #0F0C09;
+  padding: 48px 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 0.5px solid var(--border-strong);
+  flex-wrap: wrap; gap: 24px;
+}
+
+.footer-logo {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px; color: var(--sand);
+  letter-spacing: 4px;
+}
+
+.footer-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.footer-links a {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sand); text-decoration: none; opacity: .6;
+  transition: opacity .3s;
+}
+.footer-links a:hover { opacity: 1; }
+
+.footer-copy {
+  font-size: 11px; color: var(--sand); opacity: .4;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 100%; height: 0.5px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 96px; }
+  .hero-visual { height: 320px; }
+  .hero-bg-text { display: none; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+  .product-card:first-child { grid-column: 1 / -1; grid-row: auto; height: 300px; }
+  .about { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .market-layout { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-cn">普源</span>
+    <span class="nav-logo-en">Puyuan</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Enquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">布</div>
+
+  <div class="hero-content">
+    <div class="eyebrow">Est. 2008 · Tongxiang, Zhejiang</div>
+    <h1 class="hero-title">
+      Where Craft<br>Meets <em>Global</em><br>Elegance
+    </h1>
+    <div class="hero-title-cn">经纬之间，织就世界</div>
+    <p class="hero-desc">
+      Premium curtain fabric and upholstery textile manufacturer from China's foremost home textile hub — supplying discerning buyers across 40+ countries.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">View Collection</a>
+      <a href="#about" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-fabric">
+      <div class="hero-fabric-inner">
+        <span class="fabric-symbol">纹</span>
+      </div>
+    </div>
+    <div class="hero-stat-strip">
+      <div class="stat-item">
+        <span class="stat-num">40+</span>
+        <span class="stat-label">Export Countries</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">16</span>
+        <span class="stat-label">Years Established</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Fabric Designs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Curtain Fabric · 窗帘布</span>
+    <span class="marquee-item">Upholstery Fabric · 沙发布</span>
+    <span class="marquee-item">Jacquard Weave · 提花面料</span>
+    <span class="marquee-item">Decorative Textile · 装饰面料</span>
+    <span class="marquee-item">Home Furnishing · 家居布艺</span>
+    <span class="marquee-item">Curtain Fabric · 窗帘布</span>
+    <span class="marquee-item">Upholstery Fabric · 沙发布</span>
+    <span class="marquee-item">Jacquard Weave · 提花面料</span>
+    <span class="marquee-item">Decorative Textile · 装饰面料</span>
+    <span class="marquee-item">Home Furnishing · 家居布艺</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Our Collections</div>
+      <h2 class="section-title">Crafted for Every<br>Interior Vision</h2>
+    </div>
+    <div class="section-count">05</div>
+  </div>
+
+  <div class="product-grid reveal">
+    <div class="product-card">
+      <div class="product-bg product-bg-1"></div>
+      <div class="product-tag">Bestseller</div>
+      <div class="product-info">
+        <div class="product-cn">沙发布</div>
+        <div class="product-name">Signature Upholstery</div>
+        <div class="product-tier">Premium · Mid · Economy Range</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-bg product-bg-2"></div>
+      <div class="product-info">
+        <div class="product-cn">提花窗帘</div>
+        <div class="product-name">Jacquard Curtain</div>
+        <div class="product-tier">High-End Collection</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-bg product-bg-5"></div>
+      <div class="product-tag">New 2025</div>
+      <div class="product-info">
+        <div class="product-cn">功能面料</div>
+        <div class="product-name">Functional Series</div>
+        <div class="product-tier">Flame Retardant · UV Resistant</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-bg product-bg-3"></div>
+      <div class="product-info">
+        <div class="product-cn">素色窗帘</div>
+        <div class="product-name">Plain Dyed Curtain</div>
+        <div class="product-tier">Economy to Mid Range</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-bg product-bg-4"></div>
+      <div class="product-info">
+        <div class="product-cn">装饰面料</div>
+        <div class="product-name">Decorative Textile</div>
+        <div class="product-tier">Customizable · OEM Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text reveal">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title" style="color:var(--warm-white)">Rooted in<br>China's Textile<br>Heartland</h2>
+    <p class="about-body">
+      Founded in 2008 in Tongxiang, Zhejiang — the internationally acclaimed home textile capital of China — Puyuan has grown from a dedicated weaving workshop into a full-service export manufacturer trusted by buyers from Europe to the Middle East.<br><br>
+      Every metre of fabric we produce carries the legacy of a region where sofa fabric production alone wraps the Earth's equator more than ten times every year.
+    </p>
+    <blockquote class="about-quote">
+      "Quality woven into every thread, delivered to every corner of the world."
+    </blockquote>
+  </div>
+
+  <div class="about-visual reveal">
+    <div class="about-stat-box">
+      <span class="stat-num">10M+</span>
+      <span class="stat-label">Metres Exported Annually</span>
+    </div>
+    <div class="about-stat-box">
+      <span class="stat-num">ISO</span>
+      <span class="stat-label">9001 Certified Quality</span>
+    </div>
+    <div class="about-stat-box">
+      <span class="stat-num">OEM</span>
+      <span class="stat-label">Custom Development</span>
+    </div>
+    <div class="about-stat-box">
+      <span class="stat-num">21</span>
+      <span class="stat-label">Days Avg. Lead Time</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Product Tiers</div>
+      <h2 class="section-title">Solutions for Every<br>Market Segment</h2>
+    </div>
+  </div>
+
+  <div class="cat-grid reveal">
+    <div class="cat-item">
+      <div class="cat-icon">
+        <svg viewBox="0 0 36 36"><polygon points="18,4 32,30 4,30"/></svg>
+      </div>
+      <div class="cat-num">01</div>
+      <div class="cat-name">Luxury Line</div>
+      <div class="cat-name-cn">高端系列</div>
+      <div class="cat-desc">Premium jacquard, velvet upholstery and intricate woven patterns for high-end interior designers and boutique hotels.</div>
+      <div class="cat-arrow">View Range →</div>
+    </div>
+
+    <div class="cat-item">
+      <div class="cat-icon">
+        <svg viewBox="0 0 36 36"><rect x="4" y="4" width="28" height="28" rx="1"/></svg>
+      </div>
+      <div class="cat-num">02</div>
+      <div class="cat-name">Mid-Grade</div>
+      <div class="cat-name-cn">中端系列</div>
+      <div class="cat-desc">Balanced quality and price — ideal for furniture retailers, import distributors and residential decoration chains.</div>
+      <div class="cat-arrow">View Range →</div>
+    </div>
+
+    <div class="cat-item">
+      <div class="cat-icon">
+        <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14"/></svg>
+      </div>
+      <div class="cat-num">03</div>
+      <div class="cat-name">Economy</div>
+      <div class="cat-name-cn">经济系列</div>
+      <div class="cat-desc">High-volume, competitively priced curtain and sofa fabrics meeting global safety standards for mass-market buyers.</div>
+      <div class="cat-arrow">View Range →</div>
+    </div>
+
+    <div class="cat-item">
+      <div class="cat-icon">
+        <svg viewBox="0 0 36 36"><path d="M4 18 L18 4 L32 18 L18 32 Z"/></svg>
+      </div>
+      <div class="cat-num">04</div>
+      <div class="cat-name">OEM / ODM</div>
+      <div class="cat-name-cn">定制开发</div>
+      <div class="cat-desc">End-to-end custom development: your design, colour, texture and label. MOQ from 500 metres per design.</div>
+      <div class="cat-arrow">Start Project →</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets" id="markets">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Export Markets</div>
+      <h2 class="section-title">Trusted Across<br>40+ Countries</h2>
+    </div>
+  </div>
+
+  <div class="market-layout reveal">
+    <div class="market-intro">
+      <p>From Frankfurt showrooms to Middle Eastern souks and Southeast Asian hypermarkets — Puyuan fabric is woven into homes worldwide.</p>
+      <br>
+      <p>We participate annually in Frankfurt Heimtextil, Canton Fair, and China International Home Textile Exhibition.</p>
+    </div>
+
+    <div class="market-list">
+      <div class="market-item">
+        <div class="market-flag">🇩🇪</div>
+        <div>
+          <div class="market-name">Germany & Europe</div>
+          <div class="market-sub">Mid to High End · Heimtextil Buyer</div>
+        </div>
+      </div>
+      <div class="market-item">
+        <div class="market-flag">🇸🇦</div>
+        <div>
+          <div class="market-name">Middle East</div>
+          <div class="market-sub">All Tiers · Large Volume</div>
+        </div>
+      </div>
+      <div class="market-item">
+        <div class="market-flag">🇺🇸</div>
+        <div>
+          <div class="market-name">North America</div>
+          <div class="market-sub">Mid to Economy · OEM Focus</div>
+        </div>
+      </div>
+      <div class="market-item">
+        <div class="market-flag">🇷🇺</div>
+        <div>
+          <div class="market-name">Russia & CIS</div>
+          <div class="market-sub">Economy · Mid Range</div>
+        </div>
+      </div>
+      <div class="market-item">
+        <div class="market-flag">🇹🇭</div>
+        <div>
+          <div class="market-name">Southeast Asia</div>
+          <div class="market-sub">All Tiers · Growing Market</div>
+        </div>
+      </div>
+      <div class="market-item">
+        <div class="market-flag">🇬🇧</div>
+        <div>
+          <div class="market-name">UK & ANZ</div>
+          <div class="market-sub">Mid to High End</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="reveal">
+    <h2 class="contact-title">Ready to <em>Source</em><br>with Confidence?</h2>
+    <p class="contact-sub">Send us your specifications and receive a tailored quotation within 24 hours. Samples dispatched within 5 working days.</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">info@puyuantex.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">WhatsApp / WeChat</div>
+        <div class="contact-card-value">+86 573 8800 0000</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">Address</div>
+        <div class="contact-card-value">Dama Town, Tongxiang, Zhejiang</div>
+      </div>
+    </div>
+
+    <a href="mailto:info@puyuantex.com" class="btn-contact">Send Enquiry</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">普源纺织 · Puyuan Textile</div>
+  <ul class="footer-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Puyuan Textile. All rights reserved.</div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
